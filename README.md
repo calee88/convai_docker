@@ -1,14 +1,16 @@
 # convai_docker
 
 
-설치
+Install
 1) clone this project
 2) put glove in data/glove.840B.300d.txt
-3) download model from slack and extract
+3) download model.zip from slack and extract to model directory
+4) Edit model/da_cnn/checkpoints/checkpoint. Remove pathes except model-134900.
+5) install nvidia-docker
 
-실행법
+How to run
 
-1) python run-demo-simple.py  --> https server execution
+1) sudo nvidia-docker run -w /app -p 1990:1990 -v {/path/to/convai_docker}:/app calee/kaib python run-demo-simple.py  --> https server execution
 
 2) CC mode example
 python get_answer_cnsl.py --paragraph "dummy" --question "who are you ?"
